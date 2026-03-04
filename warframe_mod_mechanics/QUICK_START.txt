@@ -1,0 +1,4 @@
+Quick paste order:
+1) Paste: warframe_mod_system.js (function definition)
+2) Add: const wfMods = createWarframeModSystem({ player, buffs, law, clamp });
+3) Add hooks from paste_hooks.js

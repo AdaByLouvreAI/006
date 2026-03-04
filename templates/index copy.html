@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ship Game</title>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #070a0e;
+    width: 100%;
+    height: 100%;
+  }
+
+  canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* HUD */
+  #hud {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    color: white;
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  .bar-wrap {
+    width: 220px;
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  #hpbar {
+    height: 10px;
+    width: 100%;
+    background: #6f6;
+  }
+
+  #xpbar {
+    height: 8px;
+    width: 0%;
+    background: #6cf;
+  }
+
+  #buffs {
+    margin-top: 8px;
+    max-width: 260px;
+    line-height: 1.25;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ===============================
+     GAME CANVAS
+================================ -->
+<canvas id="c"></canvas>
+
+<!-- ===============================
+     HUD
+================================ -->
+<div id="hud">
+
+  <div class="bar-wrap">
+    <div id="hpbar"></div>
+  </div>
+
+  <div class="bar-wrap" style="margin-top:6px;">
+    <div id="xpbar"></div>
+  </div>
+
+  <div id="lvl"></div>
+  <div id="score"></div>
+  <div id="time"></div>
+  <div id="dmg"></div>
+  <div id="rof"></div>
+  <div id="spd"></div>
+
+  <div id="buffs"></div>
+
+</div>
+
+<!-- ===============================
+     GAME SCRIPT (FLASK SAFE)
+================================ -->
+<script src="{{ url_for('static', filename='version_controller.js') }}"></script>
+
+</body>
+</html>
